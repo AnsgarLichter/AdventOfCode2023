@@ -1,10 +1,12 @@
-import { match } from "assert";
-import { BunFile } from "bun";
+export type CalibrationRegex = {
+    firstNumber: RegExp
+    lastNumber: RegExp
+};
 
 export class Parser {
-    //TODO: Refactor: 2 execution files - one for part 1 and one for part 2
-    private regexFirstNumber = new RegExp(/(one|1|two|2|three|3|four|4|five|5|six|6|seven|7|eight|8|nine|9).*/);
-    private regexLastNumber = new RegExp(/.*(one|1|two|2|three|3|four|4|five|5|six|6|seven|7|eight|8|nine|9).*/);
+    constructor(private calibrationRegex: CalibrationRegex) {
+        this.calibrationRegex = calibrationRegex;
+    }
 
     public solve(calibrationInput: String[]): Number[] {
         const result: Number[] = new Array();
@@ -19,8 +21,6 @@ export class Parser {
             }
 
             const number = Number.parseInt(`${firstNumber}${lastNumber}`);
-            console.log(`Found ${number} for ${line}.`);
-
             result.push(number);
         });
 
@@ -28,13 +28,13 @@ export class Parser {
     }
 
     private getFirstNumber(line: string): Number | null {
-        const result = this.getFirstGroupInMatch(this.regexFirstNumber, line);
+        const result = this.getFirstGroupInMatch(this.calibrationRegex.firstNumber, line);
 
         return result ? this.parseStringToNumber(result) : null;
     }
 
     private getLastNumber(line: string): Number | null {
-        const result = this.getFirstGroupInMatch(this.regexLastNumber, line);
+        const result = this.getFirstGroupInMatch(this.calibrationRegex.lastNumber, line);
 
         return result ? this.parseStringToNumber(result) : null;
     }
