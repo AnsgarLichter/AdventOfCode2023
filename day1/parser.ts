@@ -2,8 +2,9 @@ import { match } from "assert";
 import { BunFile } from "bun";
 
 export class Parser {
-    private regexFirstNumber = new RegExp(/(1|2|3|4|5|6|7|8|9).*/);
-    private regexLastNumber = new RegExp(/.*(1|2|3|4|5|6|7|8|9).*/);
+    //TODO: Refactor: 2 execution files - one for part 1 and one for part 2
+    private regexFirstNumber = new RegExp(/(one|1|two|2|three|3|four|4|five|5|six|6|seven|7|eight|8|nine|9).*/);
+    private regexLastNumber = new RegExp(/.*(one|1|two|2|three|3|four|4|five|5|six|6|seven|7|eight|8|nine|9).*/);
 
     public solve(calibrationInput: String[]): Number[] {
         const result: Number[] = new Array();
