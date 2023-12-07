@@ -17,6 +17,19 @@
             "stopOnEntry": false,
             "watchMode": false
         },
+        {
+            "type": "bun",
+            "internalConsoleOptions": "neverOpen",
+            "request": "launch",
+            "name": "Debug Day 2 with examplePart01.txt",
+            "command": "test",
+            "cwd": "${workspaceFolder}",
+            "args": [
+                "./day1/data.txt"
+            ],
+            "stopOnEntry": false,
+            "watchMode": false
+        },
         /* {
             "type": "bun",
             "internalConsoleOptions": "neverOpen",
