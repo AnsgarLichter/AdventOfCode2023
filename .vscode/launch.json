@@ -8,11 +8,11 @@
             "type": "bun",
             "internalConsoleOptions": "neverOpen",
             "request": "launch",
-            "name": "Debug Day 02 with data.txt",
-            "program": "./day02/index.ts",
+            "name": "Debug Day 03 with data.txt",
+            "program": "./day03/index.ts",
             "cwd": "${workspaceFolder}",
             "args": [
-                "./day02/data/dataPart01.txt"
+                "./day03/data/examplePart01.txt"
             ],
             "stopOnEntry": false,
             "watchMode": false
