@@ -8,5 +8,5 @@ const filePath = Bun.argv[2];
 
 const gearRatios = new GearRatios();
 
-const result = await gearRatios.calculateSum(filePath);
+const result = await gearRatios.calculateGearRatios(filePath);
 console.log(`The total sum is ${result}`);

@@ -12,7 +12,7 @@
             "program": "./day03/index.ts",
             "cwd": "${workspaceFolder}",
             "args": [
-                "./day03/data/examplePart01.txt"
+                "./day03/data/examplePart02.txt"
             ],
             "stopOnEntry": false,
             "watchMode": false
